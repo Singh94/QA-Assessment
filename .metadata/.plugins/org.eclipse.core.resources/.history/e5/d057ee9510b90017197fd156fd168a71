@@ -1,0 +1,28 @@
+package qa_cinema.movies;
+
+public class movies {
+	public enum Movies {
+		M0(""), 
+		M1("Blade Runner 2049"),
+		M2("Star Wars: The Last Jedi"),
+		M3("IT"),
+		M4("Justice League"),
+		M5("Kingsman: The Golden Circle"),
+		M6("Kingsman: The Golden Circle"),
+		M7("Kingsman: The Golden Circle"),
+		M8("Kingsman: The Golden Circle"),
+		M9("Kingsman: The Golden Circle"),
+		M10("Kingsman: The Golden Circle");
+		
+		private String label;
+		
+		private Movies(String movie) {
+			this.label = movie;
+		}
+		
+		public String toString() {
+			return label;
+		}
+	}
+}
+	

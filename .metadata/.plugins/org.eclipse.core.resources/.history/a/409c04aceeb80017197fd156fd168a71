@@ -1,0 +1,9 @@
+
+.root {
+	-fx-text-fill: black;
+}
+
+.button {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
+<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
+<fullyQualifiedTypeName name="javafx.scene.Parent"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.HBox"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.GridPane"/>
+<fullyQualifiedTypeName name="javafx.scene.control.ComboBox"/>
+<fullyQualifiedTypeName name="qa_cinema.movies.movies.Movies"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
+<fullyQualifiedTypeName name="qa_cinema.Tickets.ChildTicket"/>
+<fullyQualifiedTypeName name="qa_cinema.Tickets.Tickets"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Alert.AlertType"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
+<fullyQualifiedTypeName name="qa_cinema.Tickets.AdultTicket"/>
+<fullyQualifiedTypeName name="qa_cinema.Tickets.StudentTicket"/>
+<fullyQualifiedTypeName name="qa_cinema.Tickets.OAPTicket"/>
+<fullyQualifiedTypeName name="java.text.DateFormatSymbols"/>
+</qualifiedTypeNameHistroy>

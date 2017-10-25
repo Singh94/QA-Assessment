@@ -1,0 +1,11 @@
+package qa_cinema.movies;
+
+public class movies {
+	private A a;
+	
+	public B(A a) {
+		this.a = a;
+		String item = "Movie 1";
+		a.addItem(item);
+	}
+}

@@ -1,0 +1,7 @@
+package qa_cinema.Tickets;
+
+public class ChildTicket extends Tickets {
+	
+}
+
+

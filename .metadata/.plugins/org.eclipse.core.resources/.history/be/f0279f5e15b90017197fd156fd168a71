@@ -1,0 +1,54 @@
+
+.root {
+	-fx-text-fill: black;
+}
+
+.lbl_movies {
+	-fx-font-weight: bold;
+}
+
+.lbl_tickets {
+	-fx-font-weight: bold;
+}
+
+.lbl_child {
+	-fx-font-weight: bold;
+}
+
+.lbl_student {
+	-fx-font-weight: bold;
+}
+
+.lbl_adult {
+	-fx-font-weight: bold;
+}
+
+.lbl_oap {
+	-fx-font-weight: bold;
+}
+
+.lbl_extras {
+	-fx-font-weight: bold;
+}
+
+
+.btn_reset {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+	-fx-background-radius: 75;
+}
+
+.btn_reset:hover {
+	-fx-text-fill: red;
+}
+
+.btn_purchase {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+	-fx-background-radius: 75;
+}
+
+.btn_purchase:hover {
+	-fx-text-fill: green;
+}
+

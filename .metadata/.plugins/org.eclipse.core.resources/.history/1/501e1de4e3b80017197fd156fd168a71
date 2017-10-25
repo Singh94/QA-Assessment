@@ -1,0 +1,9 @@
+
+.root {
+	-fx-background-image: url("assets/background.jpg");
+	-fx-background-repeat: stretch;
+}
+
+.btn_reset {
+	
+}

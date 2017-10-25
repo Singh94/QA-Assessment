@@ -1,0 +1,5 @@
+package qa_cinema.Tickets;
+
+public class StudentTicket extends Tickets {
+
+}

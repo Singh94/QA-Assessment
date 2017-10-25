@@ -1,0 +1,9 @@
+
+.root {
+	-fx-text-fill: black;
+}
+
+.btn_reset {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+}

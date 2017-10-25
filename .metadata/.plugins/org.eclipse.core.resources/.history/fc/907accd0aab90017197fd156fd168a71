@@ -1,0 +1,191 @@
+package qa_cinema;
+	
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import qa_cinema.Tickets.AdultTicket;
+import qa_cinema.Tickets.ChildTicket;
+import qa_cinema.Tickets.OAPTicket;
+import qa_cinema.Tickets.StudentTicket;
+import qa_cinema.Tickets.Tickets;
+import qa_cinema.movies.movies.Movies;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+
+import java.text.DateFormatSymbols;
+import java.util.Calendar;
+
+
+public class Main extends Application {
+	
+	protected int totalTickets;
+	private static int total;
+	private int totalPrice;
+	private String isWed;
+	private int discountFactor = 2;
+	
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Label lbl_selectMovie = new Label("Select Movie");
+			ComboBox<Movies> cbxMovies = new ComboBox<Movies>();
+			Label lbl_description = new Label("Description");
+		Label lbl_tickets = new Label("Admissions");
+			Label lbl_child = new Label("Child Tickets");
+			Label lbl_student = new Label("Student Tickets");
+			Label lbl_adult = new Label("Standard Tickets");
+			Label lbl_oap = new Label("OAP Tickets");
+			Label lbl_childprice = new Label("Child\t\t£4");
+			Label lbl_studentprice = new Label("Student\t\t£6");
+			Label lbl_adultprice = new Label("Standard\t\t£8");
+			Label lbl_oapprice = new Label("OAP\t\t\t£6");
+		Label lbl_extras = new Label("Extras");
+		Button btn_reset = new Button("Reset");
+		Button btn_purchase = new Button("Purchase");
+		Label lbl_txttotal = new Label("Total Tickets");
+		
+		ChildTicket cxT = new ChildTicket(total);
+		StudentTicket sxT = new StudentTicket(total);
+		AdultTicket axT = new AdultTicket(total);
+		OAPTicket snxT = new OAPTicket(total);
+		
+		String dayNames[] = new DateFormatSymbols().getWeekdays();
+	      Calendar date2 = Calendar.getInstance();
+	      isWed = (dayNames[date2.get(Calendar.DAY_OF_WEEK)]);
+		
+		
+		lbl_selectMovie.getStyleClass().add("lbl_movies");
+		GridPane.setConstraints(lbl_selectMovie, 5,  1);
+			cbxMovies.getItems().setAll(Movies.values());
+			cbxMovies.getSelectionModel().select(0);
+			GridPane.setConstraints(cbxMovies,  5,  2);
+			lbl_description.getStyleClass().add("");
+			GridPane.setConstraints(lbl_description, 5, 5);
+		
+		lbl_tickets.getStyleClass().add("lbl_tickets");
+		GridPane.setConstraints(lbl_tickets, 20,  1);
+			
+		lbl_child.getStyleClass().add("lbl_child");
+		GridPane.setConstraints(lbl_child, 20, 3);
+			TextField txt_child = new TextField("0");
+			GridPane.setConstraints(txt_child, 20, 4);
+			
+			
+		lbl_student.getStyleClass().add("lbl_student");
+		GridPane.setConstraints(lbl_student,21, 3);
+			TextField txt_student = new TextField("0");
+			GridPane.setConstraints(txt_student, 21, 4);
+
+		lbl_adult.getStyleClass().add("lbl_adult");
+		GridPane.setConstraints(lbl_adult, 20, 6);
+			TextField txt_adult = new TextField("0");
+			GridPane.setConstraints(txt_adult, 20, 7);
+			
+		lbl_oap.getStyleClass().add("lbl_oap");
+		GridPane.setConstraints(lbl_oap, 21, 6);
+			TextField txt_oap = new TextField("0");
+			GridPane.setConstraints(txt_oap, 21, 7);
+		
+		lbl_extras.getStyleClass().add("lbl_extras");
+		GridPane.setConstraints(lbl_extras, 40,  1);
+		
+		lbl_childprice.getStyleClass().add("");
+		GridPane.setConstraints(lbl_childprice, 20, 15);
+		lbl_studentprice.getStyleClass().add("");
+		GridPane.setConstraints(lbl_studentprice, 20, 16);
+		lbl_adultprice.getStyleClass().add("");
+		GridPane.setConstraints(lbl_adultprice, 20, 17);
+		lbl_oapprice.getStyleClass().add("");
+		GridPane.setConstraints(lbl_oapprice, 20, 18);
+	
+	
+		btn_reset.setOnAction(e -> {
+			cbxMovies.getSelectionModel().select(0);
+			txt_child.setText("0");
+			txt_student.setText("0");
+			txt_adult.setText("0");
+			txt_oap.setText("0");
+		}); 
+		
+		btn_purchase.setOnAction(e -> {
+			int childTicketTotal = Integer.valueOf(txt_child.getText()); //Amount of child tickets
+			int studentTicketTotal = Integer.valueOf(txt_student.getText()); //Amount of student tickets
+			int adultTicketTotal = Integer.valueOf(txt_adult.getText()); //Amount of standard tickets
+			int oapTicketTotal = Integer.valueOf(txt_oap.getText()); //Amount of oap tickets
+			
+			totalTickets = (Integer.valueOf(txt_child.getText()) +
+					 			Integer.valueOf(txt_student.getText()) +
+					 			Integer.valueOf(txt_adult.getText()) +
+					 			Integer.valueOf(txt_oap.getText()));
+			
+			childTicketTotal = cxT.getCTTotal(childTicketTotal);
+			studentTicketTotal = sxT.getSTTotal(studentTicketTotal);
+			adultTicketTotal = axT.getATTotal(adultTicketTotal);
+			oapTicketTotal = snxT.getSNTTotal(oapTicketTotal);
+		
+			
+			
+			if(isWed == "Wednesday") {
+				totalPrice = ((childTicketTotal + studentTicketTotal + adultTicketTotal + oapTicketTotal) - (discountFactor * totalTickets));
+			}
+			else {
+				totalPrice = (childTicketTotal + studentTicketTotal + adultTicketTotal + oapTicketTotal);
+			}
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			String a = "£ " + Integer.toString(totalPrice);
+			
+			
+			
+
+			alert.setContentText(a);
+			alert.setTitle("Confirmation");
+			alert.setHeaderText("Total for the tickets purchased");
+			alert.showAndWait();
+		});
+		
+		
+	
+		btn_reset.getStyleClass().add("btn_reset");
+		GridPane.setConstraints(btn_reset, 1, 50);
+		
+		btn_purchase.getStyleClass().add("btn_purchase");
+		GridPane.setConstraints(btn_purchase, 55, 50);
+		
+		
+		
+		GridPane grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
+		
+		grid.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		grid.getChildren().addAll(lbl_selectMovie, cbxMovies,
+										lbl_description,
+									lbl_tickets, lbl_child, lbl_student, lbl_adult, lbl_oap,
+										txt_child, txt_student, txt_adult, txt_oap,
+										lbl_childprice, lbl_studentprice, lbl_adultprice, lbl_oapprice,
+									btn_reset, btn_purchase,
+									lbl_extras);
+		
+		
+		primaryStage.setTitle("QA Cinemas");
+		primaryStage.setResizable(false);
+		primaryStage.setScene(new Scene(grid, 1280, 720));
+		primaryStage.show();		
+	}
+}

@@ -1,0 +1,21 @@
+package Tickets;
+
+public class OAPTicket extends Tickets {
+
+	private int price;
+	private String Type;
+	
+	public OAPTicket(int number, String TicketType) {
+		super(number, TicketType);
+		this.price = 4;
+		this.Type = "Child";
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public String getType() {
+		return Type;
+	}
+}

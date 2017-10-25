@@ -1,0 +1,20 @@
+package qa_cinema.Tickets;
+
+public class StudentTicket extends Tickets {
+	private int price = 4;
+	int total;
+	
+	public StudentTicket(int numberOfTickets) {
+		super(numberOfTickets);
+		this.numberOfTickets = numberOfTickets;
+	}
+	
+	public int getCTPrice() {
+		return price;
+	}
+	
+	public int getTTotal() {
+		total = (price * numberOfTickets);
+		return total;
+	}
+}

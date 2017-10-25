@@ -1,0 +1,31 @@
+
+.root {
+	-fx-text-fill: black;
+}
+
+.lbl_movies {
+	-fx-font-weight: bold;
+	-fx-padding: 10;
+}
+
+
+.btn_reset {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+	-fx-background-radius: 75;
+}
+
+.btn_reset:hover {
+	-fx-text-fill: red;
+}
+
+.btn_purchase {
+	-fx-border-radius: 30;
+	-fx-font-weight: bold;
+	-fx-background-radius: 75;
+}
+
+.btn_purchase:hover {
+	-fx-text-fill: green;
+}
+

@@ -1,0 +1,26 @@
+package qa_cinema.movies;
+
+public class movies {
+	public enum Movies {
+		String M0 = "Movie 0";
+		String M1 = "Movie 1";
+		String M2 = "Movie 2";
+		String M3 = "Movie 3";
+		String M4 = "Movie 4";
+		String M5 = "Movie 5";
+		String M6 = "Movie 6";
+		String M7 = "Movie 7";
+		String M8 = "Movie 8";
+		String M9 = "Movie 9";
+		
+		private String label;
+		
+		Movies(String label) {
+			this.label = label;
+		}
+		
+		public String toString() {
+			return label;
+		}
+	}
+}

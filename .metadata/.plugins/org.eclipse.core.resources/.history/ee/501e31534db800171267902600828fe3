@@ -1,0 +1,21 @@
+package Tickets;
+
+public class StudentTicket extends Tickets {
+
+	private int price;
+	private String Type;
+	
+	public StudentTicket(int number, String TicketType) {
+		super(number, TicketType);
+		this.price = 4;
+		this.Type = "Child";
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public String getType() {
+		return Type;
+	}
+}

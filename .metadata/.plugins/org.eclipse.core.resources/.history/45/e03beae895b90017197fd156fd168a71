@@ -1,0 +1,12 @@
+package qa_cinema.Tickets;
+
+public class Tickets {
+	
+	private int numberofTickets;
+	private String TicketType;
+	
+	public Tickets(int numberofTickets, String TicketType) {
+		this.numberofTickets = numberofTickets;
+		this.TicketType = TicketType;
+	}
+}

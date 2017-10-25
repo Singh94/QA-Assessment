@@ -1,0 +1,19 @@
+Encapsulation: Encapsulation allows protecting data and behaviours using access modifiers such as protected and private. you would provide access
+		to these feilds using public methods. Data that has private would not be able to be used outside the class it has been declared in.
+		An example of this could be when a client is using an online shopping cart, the total will be private thus not allowing the person
+		to change the total of the cart. 
+
+Inheritance: Inheritance allows differnt objects to inherit common onjects with one another. The superclass would share objects with other classes. 
+		However these classes would have features that make them unique and differ from eachother. An example of inheritance could be the superclass
+		being Vehicle which would hold default a default value such as Wheels and classes that would inherit the superclass. These subclasses such 
+		as Bicycle, Truck and car. Each of these subclasses that inherit the superclass woudl inherit the the default value and override this value.
+
+
+Polymorphism: Polymorphism allows abjects to take on many forms. This is done when a class(child) extends another class(parent). An example would be
+		the parent class being Shape and the child class being a rectangle, circle, square or another gemometrial shape. 
+
+
+Abstraction: Abstraction allows you to hide data that is not relevant to the user such as a bank account, the customer would know what their account number,
+		balance is but they would not be able to change this. The customer would be able to make a balance request that would inform the customer
+		what their balance is and be able to undertake a fund transfer. These woulnd only require certain information from the account infromation. 
+		These could just be the Account Number and Sort Code for a balance enquiry and Account Number, Sort Code and Current Balance (Overdraft if 		active) for a fund transfer. 

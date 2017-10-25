@@ -1,0 +1,7 @@
+
+.root {
+	-fx-background-image: url("assets/background.jpg");
+	-fx-background-repeat: stretch;
+	-fx-background-size: 975 568;
+}
+

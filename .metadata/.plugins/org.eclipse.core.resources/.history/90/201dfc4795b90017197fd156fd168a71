@@ -1,0 +1,21 @@
+package qa_cinema.Tickets;
+
+public class ChildTicket extends Tickets {
+
+	private int price;
+	private String Type;
+	
+	public ChildTicket(int number, String TicketType) {
+		super(number, TicketType);
+		this.price = 4;
+		this.Type = "Child";
+	}
+	
+	public int getCTPrice() {
+		return price;
+	}
+	
+	public String getCTType() {
+		return Type;
+	}
+}
